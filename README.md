@@ -1,7 +1,5 @@
 # asfaltics pdf gen
 
-## instructions
-
 ### getting set up
 
 Install the tool `wkhtmltopdf`: https://wkhtmltopdf.org/downloads.html
@@ -20,8 +18,13 @@ cd asfaltics_pdf_gen
 
 ### generating the pdfs
 
-By default, it is set up to build all 1998 pages. You can change this
-by editing the `start` and `end` values in the `Makefile`.
+By default, it is set up to build all 1998 pages. 
+
+First, make sure this is working by testing one page:
+
+```
+make pdfs/0001.pdf
+```
    
 To download all the html pages, and generate pdfs, run:
 
@@ -29,12 +32,20 @@ To download all the html pages, and generate pdfs, run:
 make -j 8
 ```
 
-(The `-j 8` says, run 8 processes in parallel to do this more quickly.)
+The `-j 8` says, run 8 processes in parallel to do this more
+quickly. It takes several minutes to download the html files and
+generate all pdfs.
 
 ### making adjustments
 
 The `overrides.css` has PDF-specific css overrides. You can edit this
-file, and then run the `make -j 8` command again to update the pdfs.
+file, and then run the `make -j 8` command again to update the
+pdfs. Or, run e.g. `make pdfs/0010.pdf` to see the changes applied to
+only one pdf.
 
 Note that if you've already downloaded the html files, you won't need
 to download again.
+
+If you're making small adjustments and testing them on certain pages,
+you can edit the `start` and `end` values in the `Makefile`, so that
+you are building a smaller set of pages.
