@@ -28,7 +28,10 @@ First, make sure this is working by testing one page:
 make pdfs/0001.pdf
 ```
    
-To download all the html pages, and generate pdfs, run:
+If that runs succesfully, you should now have a `pdfs` directory
+within `asfaltics_pdf_gen`, and it should have `0001.pdf` inside.
+
+To download all the html pages and generate pdfs, run:
 
 ```
 make -j 8
