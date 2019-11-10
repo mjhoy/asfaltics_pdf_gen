@@ -1,5 +1,21 @@
 # asfaltics pdf gen
 
+### how this works
+
+The basic idea is to download all `.htm` files into an `html/`
+directory, and then to run the files through the tool `wkhtmltopdf` to
+produce pdfs in the `pdf` directory.
+
+The `Makefile` here describes the recipes for doing these things.
+
+`wkhtmltopdf` has lots of options. You can read more about them here:
+https://wkhtmltopdf.org/usage/wkhtmltopdf.txt I've included one
+option, `--user-style-sheet`, to add stylesheet overrides, using the
+file `overrides.css`.
+
+If you want to change the options given to `wkhtmltopdf`, you could
+edit the part of the `Makefile` where it's referenced.
+
 ### getting set up
 
 Install the tool `wkhtmltopdf`: https://wkhtmltopdf.org/downloads.html
