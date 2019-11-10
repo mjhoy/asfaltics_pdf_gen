@@ -24,7 +24,7 @@ html/%.htm: html
 	curl $(asfaltics_path)/$(notdir $@) -o $@
 	touch $@
 
-html/default.css:
+html/default.css: html
 	curl $(asfaltics_path)/default.css -o $@
 
 pdfs/%.pdf: overrides.css html/default.css pdfs html/%.htm
