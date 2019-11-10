@@ -12,6 +12,8 @@ open the file.
 Open your terminal. Clone this git repository, and `cd` into it:
 
 ```
+# if you want to install into ~/Documents, for example:
+cd ~/Documents
 git clone https://github.com/mjhoy/asfaltics_pdf_gen.git
 cd asfaltics_pdf_gen
 ```
