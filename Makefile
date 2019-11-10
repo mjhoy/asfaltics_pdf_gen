@@ -28,7 +28,7 @@ html/default.css: html
 	curl $(asfaltics_path)/default.css -o $@
 
 pdfs/%.pdf: overrides.css html/default.css pdfs html/%.htm
-	wkhtmltopdf --user-style-sheet overrides.css html/$*.htm $@
+	wkhtmltopdf --user-style-sheet overrides.css --run-script "var title; var nav = document.querySelector('#content .indent-rule-below:first-child'); if (title = nav.innerText.match(/<\s+([^\s]*)\s+>/)[1]) { nav.innerText = title; }" html/$*.htm $@
 
 clean:
 	rm -rf html
