@@ -1,0 +1,9 @@
+/* hide the navigation */
+#content p.indent-rule-below:first-child {
+  display: none;
+}
+
+/* remove link color */
+a {
+  color: #333;
+}

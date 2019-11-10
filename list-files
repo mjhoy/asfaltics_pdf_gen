@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# list-files start end extension prefix
+#
+# Prints a list of files, start -> end, with extension and
+# prefix. Pads numbers by 4 digits.
+#
+# e.g.,
+# $ ./list-files 12 14 pdf pdfs/
+# pdfs/0012.pdf pdfs/0013.pdf pdfs/0014.pdf
+
+set -eou pipefail
+
+start=$1
+end=$2
+ext=$3
+prefix=$4
+
+for i in $(seq -f "%04g" $start $end)
+do
+    printf "$prefix$i.$ext ";
+done
