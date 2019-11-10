@@ -4,7 +4,7 @@
 
 The basic idea is to download all `.htm` files into an `html/`
 directory, and then to run the files through the tool `wkhtmltopdf` to
-produce pdfs in the `pdf` directory.
+produce pdfs in a `pdfs/` directory.
 
 The `Makefile` here describes the recipes for doing these things.
 
